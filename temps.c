@@ -15,20 +15,24 @@
 int main(void)
 {
 
+    // Init Vars
     bool valid;
     int low, high, i;
 
+    // Print header to user
     printf("---=== IPC Temperature Analyzer ===---\n");
 
     for (i = 1; i <= NUMS; i++)
     {
         do
         {
+            // Get user input
             printf("Enter the high value for day %d: ", i);
             scanf("%d\n", &high);
             printf("Enter the low value for day %d: ", i);
             scanf("%d\n", &low);
 
+            // check if user input if not in range
             if (!(high > low && high <= 40 && low >= -40))
             {
                 printf("Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.\n");
