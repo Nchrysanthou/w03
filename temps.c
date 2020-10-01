@@ -63,13 +63,15 @@ int main(void)
         } while (i <= NUMS);
     }
 
+    // Calculate Means
     double totalMean = (totalHigh + totalLow) / (NUMS * 2);
     double lowMean = (totalLow) / (NUMS);
     double highMean = (totalHigh) / (NUMS);
 
-    printf("The Average (mean) temperature was: %.2lf\n", lowMean);
-    printf("The Average (mean) temperature was: %.2lf\n", highMean);
-    printf("The Average (mean) temperature was: %.2lf\n", totalMean);
+    // Print Values
+    printf("The average (mean) LOW temperature was: %.2lf\n", lowMean);
+    printf("The average (mean) HIGH temperature was: %.2lf\n", highMean);
+    printf("The average (mean) temperature was: %.2lf\n", totalMean);
 
     printf("The highest temperature was %d, on day %d\n", highestTemp, highestDay);
     printf("The lowest temperature was %d, on day %d\n", lowestTemp, lowestDay);
