@@ -4,41 +4,39 @@
 // Email:          Nchrysanthou@myseneca.ca
 // Workshop:       3 (in-lab)
 //==============================================
-#include <stdbool.h>
+
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
-#define NUM 3
+#include <stdbool.h>
+
+#define NUMS 3
 
 int main(void)
 {
+
     printf("---=== IPC Temperature Analyzer ===---\n");
     bool valid;
-    int high, low;
-    int i = 1;
-    for (i = 1; i <= NUM; i++)
+    int low, high, i;
+
+    for (i = 1; i <= NUMS; i++)
     {
         do
         {
-            printf("Enter the high value for day %d:\n", i);
+            printf("Enter the high value for day %d: ", i);
             scanf("%d", &high);
-            printf("Enter the low value for day %d:\n", i);
+            printf("\n");
+            printf("Enter the low value for day %d: ", i);
             scanf("%d", &low);
+            printf("\n");
 
-            if (low < -40 || high > 40)
+            if (!(high > low && high <= 40 && low >= -40))
             {
-                printf("incorrect values, temperatures must be in the range of -40 to 40, high must be greater than low\n");
-                valid = false;
+                printf("Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.\n");
+                i--;
             }
-
-            else if (low < high)
-                printf("incorrect values, temperatures must be in the range of -40 to 40, high must be greater than low\n");
-
-            else
-            {
-                valid = true;
-                printf("your value is correct\n");
-            }
-
-        } while (!valid);
+        } while (valid);
     }
+
     return 0;
 }
