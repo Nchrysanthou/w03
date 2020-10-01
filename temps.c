@@ -12,8 +12,9 @@
 int main(void)
 {
 
-    printf("---=== IPC Temperature Analyzer ===---\n");
     int low, high, i;
+
+    printf("---=== IPC Temperature Analyzer ===---\n");
 
     for (i = 1; i <= NUMS; i++)
     {
@@ -27,14 +28,10 @@ int main(void)
             printf("\n");
 
             if (!(high > low && high <= 40 && low >= -40))
-            {
-                printf("Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.\n");
-                printf("\n");
-            }
+                printf("Incorrect values, temperatures must be in the range -40 to 40, high must be greater than low.\n\n");
             else
-            {
                 i++;
-            }
+
         } while (i <= NUMS);
     }
 
