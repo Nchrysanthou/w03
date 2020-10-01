@@ -13,8 +13,8 @@ int main(void)
     printf("---=== IPC Temperature Analyzer ===---\n");
     bool valid;
     int high, low;
-
-    for (int i = 1; i <= NUM; i++)
+    int i = 1;
+    for (i = 1; i <= NUM; i++)
     {
         do
         {
