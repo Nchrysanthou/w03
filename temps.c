@@ -15,20 +15,19 @@
 int main(void)
 {
 
-    printf("---=== IPC Temperature Analyzer ===---\n");
     bool valid;
     int low, high, i;
+
+    printf("---=== IPC Temperature Analyzer ===---\n");
 
     for (i = 1; i <= NUMS; i++)
     {
         do
         {
             printf("Enter the high value for day %d: ", i);
-            scanf("%d", &high);
-            printf("\n");
+            scanf("%d\n", &high);
             printf("Enter the low value for day %d: ", i);
-            scanf("%d", &low);
-            printf("\n");
+            scanf("%d\n", &low);
 
             if (!(high > low && high <= 40 && low >= -40))
             {
